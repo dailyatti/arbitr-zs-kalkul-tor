@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Arbitrázs Kalkulátor</title>
+    <!-- Professzionális, reszponzív arbitrázs kalkulátor -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Fő tartalom -->
+    <main>
+        <h1>Arbitrázs Kalkulátor</h1>
+        <!-- Itt jön a táblázat és a sablon -->
+        <!-- Példa sablon: -->
+        <template id="row-template">
+            <tr class="arb-row" data-event-id="{{eventId}}" data-market-id="{{marketId}}">
+                <td>{{league}}</td>
+                <td>{{home}}</td>
+                <td>{{away}}</td>
+                <td>{{marketName}}</td>
+                <td class="profit">{{profit}}</td>
+                <td><button class="stake-1">Tét 1</button></td>
+                <td><button class="stake-2">Tét 2</button></td>
+            </tr>
+        </template>
+        <table id="arb-table">
+            <thead>
+                <tr>
+                    <th>Ligák</th>
+                    <th>Hazai</th>
+                    <th>Vendég</th>
+                    <th>Piac</th>
+                    <th>Profit (%)</th>
+                    <th colspan="2">Tétek</th>
+                </tr>
+            </thead>
+            <tbody id="arb-body">
+                <!-- Dinamikus sorok ide jönnek -->
+            </tbody>
+        </table>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>

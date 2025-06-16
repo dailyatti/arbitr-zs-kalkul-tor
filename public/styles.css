@@ -1,0 +1,110 @@
+/*
+ * styles.css - Arbitrázs Kalkulátor
+ * Professzionális, reszponzív stílusok
+ */
+
+/* Variables */
+:root {
+    --primary-color: #3b82f6;
+    --primary-hover: #2563eb;
+    --success-color: #16a34a;
+    --error-color: #dc2626;
+    --background-color: #ffffff;
+    --hover-background: #f3f4f6;
+    --border-radius: 8px;
+    --transition-speed: 0.2s;
+}
+
+/* Table Styles */
+#arb-table {
+    border-collapse: separate;
+    border-spacing: 0 6px;
+    width: 100%;
+    margin: 1rem 0;
+}
+
+/* Row Styles */
+.arb-row {
+    background: var(--background-color);
+    transition: all var(--transition-speed) ease;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+}
+
+.arb-row:hover {
+    background: var(--hover-background);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+    transform: translateY(-1px);
+}
+
+.arb-row.active {
+    outline: 3px solid var(--primary-color);
+    background: var(--hover-background);
+}
+
+/* Cell Styles */
+.arb-row td {
+    padding: 0.75rem 1rem;
+    vertical-align: middle;
+}
+
+/* Profit Styles */
+.profit {
+    font-weight: 600;
+    text-align: right;
+}
+
+.profit.positive {
+    color: var(--success-color);
+}
+
+.profit.negative {
+    color: var(--error-color);
+}
+
+/* Button Styles */
+.stake-1,
+.stake-2 {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: var(--border-radius);
+    background: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    transition: background var(--transition-speed) ease;
+}
+
+.stake-1:hover,
+.stake-2:hover {
+    background: var(--primary-hover);
+}
+
+/* Flash Animation */
+.flash {
+    animation: flash 1.5s forwards;
+}
+
+@keyframes flash {
+    0% {
+        background: #fef08a;
+    }
+    100% {
+        background: transparent;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #arb-table {
+        font-size: 0.9rem;
+    }
+
+    .arb-row td {
+        padding: 0.5rem;
+    }
+
+    .stake-1,
+    .stake-2 {
+        padding: 0.4rem 0.8rem;
+    }
+} 
